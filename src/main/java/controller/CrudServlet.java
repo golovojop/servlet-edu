@@ -25,6 +25,9 @@ public class CrudServlet extends HttpServlet {
     public void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
             throws IOException {
 
+        // Для того, чтобы в браузере отображалась кириллица
+        httpServletResponse.setCharacterEncoding("UTF-8");
+
         PrintWriter out = httpServletResponse.getWriter();
         out.print("Hello from servlet");
 
