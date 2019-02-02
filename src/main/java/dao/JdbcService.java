@@ -2,6 +2,7 @@ package dao;
 
 import model.Person;
 
+import javax.servlet.ServletContext;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -10,8 +11,8 @@ public class JdbcService {
 
     private JdbcAdapter jc;
 
-    public JdbcService() {
-        this.jc = JdbcAdapter.getIdbc();
+    public JdbcService(ServletContext context) {
+        this.jc = new JdbcAdapter(context);
     }
 
     public Person[] selectById(int id) {
